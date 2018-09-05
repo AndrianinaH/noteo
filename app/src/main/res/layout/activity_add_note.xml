@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addNoteLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusedByDefault="false"
+    tools:context="com.creation.apps.mada.noteo.AddNoteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTealAccent">
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorTeal"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Note Name"
+            android:textColor="@color/colorTealDark"
+            android:textColorLink="@color/colorTeal" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Color Theme"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/nameText"
+            android:layout_alignLeft="@+id/nameText"
+            android:layout_alignStart="@+id/nameText"
+            android:layout_marginTop="14dp"
+            android:layout_alignRight="@+id/nameText"
+            android:layout_alignEnd="@+id/nameText" />
+
+        <Button
+            android:id="@+id/saveNoteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/nameText"
+            android:layout_alignLeft="@+id/nameText"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/nameText"
+            android:layout_alignStart="@+id/nameText"
+            android:layout_marginBottom="22dp"
+            android:background="@color/colorTeal"
+            android:text="Save"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp" />
+
+    </RelativeLayout>
+</android.widget.FrameLayout>
