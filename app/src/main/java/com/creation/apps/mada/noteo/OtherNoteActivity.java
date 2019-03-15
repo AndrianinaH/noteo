@@ -1,8 +1,11 @@
 package com.creation.apps.mada.noteo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.creation.apps.mada.noteo.Model.Note;
@@ -22,6 +26,10 @@ public class OtherNoteActivity extends AppCompatActivity {
     private Note myNote;
     private NoteService noteService;
     private ConstraintLayout mainLayout;
+
+    int noteColor = 0;
+    int noteDarkColor = 0;
+    int noteAccentColor = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +90,9 @@ public class OtherNoteActivity extends AppCompatActivity {
     };
 
     private void setAllColor(){
-        int noteColor = getResources().getIdentifier("color"+myNote.getThemenote(),"color",getPackageName());
-        int noteDarkColor = getResources().getIdentifier("color"+myNote.getThemenote()+"Dark","color",getPackageName());
-        int noteAccentColor = getResources().getIdentifier("color"+myNote.getThemenote()+"Accent","color",getPackageName());
+        noteColor = getResources().getIdentifier("color"+myNote.getThemenote(),"color",getPackageName());
+        noteDarkColor = getResources().getIdentifier("color"+myNote.getThemenote()+"Dark","color",getPackageName());
+        noteAccentColor = getResources().getIdentifier("color"+myNote.getThemenote()+"Accent","color",getPackageName());
 
         mainLayout.setBackgroundColor(ContextCompat.getColor(this,noteAccentColor));
         oneNote.setTextColor(ContextCompat.getColor(this,noteDarkColor));
@@ -117,9 +125,7 @@ public class OtherNoteActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_delete_note) {
-            noteService.deleteNote(myNote.getIdnote());
-            Intent intent = new Intent(OtherNoteActivity.this, PrincipalActivity.class);
-            startActivity(intent);
+            confirmDelete();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -129,6 +135,39 @@ public class OtherNoteActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    private void confirmDelete(){
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle("Effacer une note");
+        b.setMessage("Voulez-vous vraiment effacer cette note ?");
+        b.setCancelable(false);
+
+        b.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        b.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                noteService.deleteNote(myNote.getIdnote());
+                Intent intent = new Intent(OtherNoteActivity.this, PrincipalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        AlertDialog a=b.create();
+
+        a.show();
+
+        Button bYes = a.getButton(DialogInterface.BUTTON_POSITIVE);
+        bYes.setBackgroundColor(ContextCompat.getColor(this,noteColor));
+        bYes.setTextColor(Color.WHITE);
+
+        Button bNo = a.getButton(DialogInterface.BUTTON_NEGATIVE);
+        bNo.setTextColor(Color.RED);
+
     }
 
 }
