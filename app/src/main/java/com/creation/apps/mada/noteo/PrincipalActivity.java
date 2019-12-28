@@ -146,7 +146,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
 
     private void gestionOneNote(){
-        UtilService.setCursorDrawableColor(oneNote, R.color.colorTealDark);
+        UtilService.setCursorDrawableColor(oneNote, R.color.colorTeal);
         //-------- au début
         myNote =allNote.get(0);
         setTitle(myNote.getNamenote());

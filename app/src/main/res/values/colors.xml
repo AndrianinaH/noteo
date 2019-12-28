@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorTeal">#00897b</color>
-    <color name="colorTealDark">#004d40</color>
-    <color name="colorTealAccent">#a7ffeb</color>
+    <color name="colorTealDark">#004D40</color>
+    <color name="colorTealAccent">#A7FFEB</color>
 
     <color name="colorRed">#e53935</color>
-    <color name="colorRedDark">#b71c1c</color>
+    <color name="colorRedDark">#B71C1C</color>
     <color name="colorRedAccent">#ff8a80</color>
 
     <color name="colorAmber">#ffc107</color>
@@ -13,7 +13,7 @@
     <color name="colorAmberAccent">#ffe57f</color>
 
     <color name="colorIndigo">#3949ab</color>
-    <color name="colorIndigoDark">#1a237e</color>
+    <color name="colorIndigoDark">#1A237E</color>
     <color name="colorIndigoAccent">#8c9eff</color>
 
     <color name="colorCyan">#00acc1</color>
