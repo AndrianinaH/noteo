@@ -98,9 +98,6 @@ public class OtherNoteActivity extends AppCompatActivity {
         oneNote.setTextColor(ContextCompat.getColor(this,noteDarkColor));
         oneNote.setHintTextColor(ContextCompat.getColor(this,noteColor));
         oneNote.setLinkTextColor(ContextCompat.getColor(this,noteColor));
-        oneNote.setHighlightColor(ContextCompat.getColor(this,noteColor));
-        
-        UtilService.setCursorDrawableColor(oneNote,ContextCompat.getColor(this,noteColor));
     }
 
     private void gestionOneNote(){
