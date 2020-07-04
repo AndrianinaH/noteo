@@ -1,12 +1,9 @@
 package com.creation.apps.mada.noteo;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,8 +13,6 @@ import android.widget.RadioGroup;
 
 import com.creation.apps.mada.noteo.Service.NoteService;
 import com.creation.apps.mada.noteo.Service.UtilService;
-
-import java.util.List;
 
 public class AddNoteActivity extends AppCompatActivity {
 
