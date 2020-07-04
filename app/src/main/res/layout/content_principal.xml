@@ -32,7 +32,7 @@
         android:paddingRight="8dp"
         android:textColor="@color/colorTealDark"
         android:textColorLink="@color/colorTealAccent"
-        android:textCursorDrawable="@color/colorTealDark"
+        android:textColorHighlight="@color/colorTeal"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
